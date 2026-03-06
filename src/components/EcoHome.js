@@ -67,7 +67,7 @@ export default function EcoHome() {
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-4">
             {/* ASK OUR AI */}
             <div
-              onClick={() => navigate("/ask-ai")}
+              onClick={() => navigate("/chatbot")}
               className="bg-orange-500 cursor-pointer rounded-xl px-4 py-3 text-white shadow-md
                  hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
             >

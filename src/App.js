@@ -44,6 +44,8 @@ import MyImpactDashboard from "./components/MyImpactDashboard";
 import SustainabilityNews from "./components/SustainabilityNews";
 import EcoScorePage from "./components/EcoScorePage";
 
+import ChatPage from "./components/ChatPage";
+
 function MainContent() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
@@ -208,6 +210,7 @@ function MainContent() {
           <Route path="/admin/add-products" element={<AdminHome />} />
         </Route>
       </Route>
+      <Route path="/chatbot" element={<ChatPage />} />
     </Routes>
   );
 }

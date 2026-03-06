@@ -34,6 +34,7 @@ urlpatterns = [
     path('api/carbon/', include('carbon_impact.urls')),
 
     path("api/mfa/", include("adaptive_mfa.urls")),
+    path("api/chatbot/", include("chatbot.urls")),
     # path("", include("adaptive_mfa.urls")),
         # Add this line
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
