@@ -131,6 +131,10 @@ export default function UserOrders() {
       <header className="bg-gray-800 text-white px-6 py-4">
         <nav>
           <ul className="flex items-center justify-between text-sm font-medium">
+          {/* <p className="font-bold text-xl">EcoShield.</p> */}
+          <Link to="/" className="font-bold text-xl">
+  EcoShield.
+</Link>
             <li>
               <Link to="/cart" className="hover:text-teal-400">
                 Cart

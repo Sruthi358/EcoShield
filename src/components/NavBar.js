@@ -228,13 +228,16 @@ export default function NavBar(props) {
   return (
     <header className="bg-[#131921] text-white px-6 py-4">
       <nav className="flex items-center justify-between text-sm font-medium gap-4 flex-wrap">
-        <p className="font-bold text-xl">EcoShield.</p>
+        {/* <p className="font-bold text-xl">EcoShield.</p> */}
+        <Link to="/" className="font-bold text-xl">
+  EcoShield.
+</Link>
 
         {/* LEFT */}
         <div className="flex items-center gap-4">
-          <Link to="/aboutUs" className="hover:text-teal-500">
+          {/* <Link to="/aboutUs" className="hover:text-teal-500">
             About
-          </Link>
+          </Link> */}
           <Link to="/contactUs" className="hover:text-teal-500">
             Contact Us
           </Link>

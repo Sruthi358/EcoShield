@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 import {
   SiGooglepay,
   SiPhonepe,
@@ -88,6 +89,10 @@ export default function PaymentGateway() {
     <>
     <header className='bg-gray-800 text-white px-6 py-4'>
   <nav className='flex items-center justify-between text-sm font-medium gap-4 flex-wrap'>
+  {/* <p className="font-bold text-xl">EcoShield.</p> */}
+  <Link to="/" className="font-bold text-xl">
+  EcoShield.
+</Link>
     <ul className='ml-auto mr-8'>
       <li>
         <button 

@@ -156,7 +156,7 @@ export default function CommonResult({ result }) {
                       p.product_image.startsWith("http")
                         ? p.product_image
                         // : `http://127.0.0.1:8000${p.product_image}`
-                        : `http://10.209.81.82:8000${p.product_image}`
+                        : `http://127.0.0.1:8000${p.product_image}`
 
                     }
                     className="w-full h-full object-cover"

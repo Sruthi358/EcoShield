@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import logo1 from "../images/logo1.png";
+// import logo1 from "../images/logo1.png";
 
 const ProductListing = ({ searchTerm }) => {
   const navigate = useNavigate();
@@ -122,8 +122,8 @@ const ProductListing = ({ searchTerm }) => {
       <header className="bg-[#232f3e] top-0 z-20 w-full">
         <nav className="bg-gray-800 text-white relative z-10">
           <div className="flex items-center px-6 py-4 relative">
-            <div className="w-40"></div>
-            <ul className="flex gap-8 text-sm font-medium ml-1 pl-10">
+            {/* <div className="w-40"></div> */}
+            <ul className="flex gap-24 text-sm font-medium">
               {Object.keys(productCategories).map((category) => (
                 <li
                   key={category}
@@ -159,9 +159,9 @@ const ProductListing = ({ searchTerm }) => {
                 </li>
               ))}
             </ul>
-            <div className="absolute -bottom-20 left-6 z-20 pointer-events-none">
+            {/* <div className="absolute -bottom-20 left-6 z-20 pointer-events-none">
               <img src={logo1} alt="Logo" className="h-48" />
-            </div>
+            </div> */}
           </div>
         </nav>
       </header>

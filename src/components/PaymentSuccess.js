@@ -6,7 +6,12 @@ export default function PaymentSuccess() {
     <>
       <header className="bg-gray-800 text-white px-6 py-4">
         <nav className=" text-sm font-medium gap-4 flex-wrap">
+       
           <ul className="ml-auto mr-8 flex items-center justify-between">
+          {/* <p className="font-bold text-xl">EcoShield.</p> */}
+          <Link to="/" className="font-bold text-xl">
+  EcoShield.
+</Link>
             <li>
               <Link to="/user-orders" className="hover:text-teal-700">
                 Orders

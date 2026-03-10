@@ -58,8 +58,10 @@ export default function AuthLogin() {
 
       const res = await axios.post(
         // "http://10.209.81.82:8000/api/mfa/login/",
-        // "http://localhost:8000/api/mfa/login/",
-        `${process.env.REACT_APP_PHONE_API_URL}/api/mfa/login/`,
+        // "http://10.83.25.82:8000/api/mfa/login/",
+
+        "http://localhost:8000/api/mfa/login/",
+        // `${process.env.REACT_APP_PHONE_API_URL}/api/mfa/login/`,
         {
           username,
           password,

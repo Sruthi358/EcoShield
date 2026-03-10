@@ -22,9 +22,9 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-admin.site.site_header = "SustainaScan Administration"
-admin.site.site_title = "SustainaScan Admin Portal"
-admin.site.index_title = "Welcome to SustainaScan Dashboard"
+admin.site.site_header = "EcoShield Administration"
+admin.site.site_title = "EcoShield Admin Portal"
+admin.site.index_title = "Welcome to EcoShield Dashboard"
 
 
 urlpatterns = [

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo1 from "../images/logo1.png";
+// import logo1 from "../images/logo1.png";
 
 export default function SecondaryNavBar() {
   const [hoveredCategory, setHoveredCategory] = useState(null);
@@ -68,9 +68,9 @@ export default function SecondaryNavBar() {
           
           <div className="flex items-center px-6 py-4 relative">
             {/* Spacer so logo doesn't overlap menu */}
-            <div className="w-40"></div>
+            {/* <div className="w-40"></div> */}
             {/* Navigation menu */}
-            <ul className="flex gap-8 text-sm font-medium ml-1 pl-10">
+            <ul className="flex gap-28 text-sm font-medium ml-1">
               {Object.keys(productCategories).map((category) => (
                 <li
                   key={category}
@@ -98,9 +98,9 @@ export default function SecondaryNavBar() {
               ))}
             </ul>
             {/* Logo (hanging below navbar) */}
-            <div className="absolute -bottom-20 left-6 z-20 pointer-events-none">
+            {/* <div className="absolute -bottom-20 left-6 z-20 pointer-events-none">
               <img src={logo1} alt="Logo" className="h-48" />
-            </div>
+            </div> */}
           </div>
         </nav>
       </header>

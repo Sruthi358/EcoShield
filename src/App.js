@@ -45,6 +45,7 @@ import SustainabilityNews from "./components/SustainabilityNews";
 import EcoScorePage from "./components/EcoScorePage";
 
 import ChatPage from "./components/ChatPage";
+import ChatbotButton from "./components/ChatbotButton";
 
 function MainContent() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -60,7 +61,8 @@ function MainContent() {
   };
 
   return (
-    <Routes>
+    <>
+      <Routes>
       {/* Public Routes */}
       <Route
         path="/eco-home"
@@ -85,9 +87,24 @@ function MainContent() {
           </>
         }
       />
-      <Route path="/sus-news" element={<SustainabilityNews />} />
-      <Route path="/otp" element={<OtpVerify />} />
-      <Route path="/security-questions" element={<SecurityQuestions />} />
+      <Route path="/sus-news" element={
+        <>
+        <RegisterLoginNavBar Button="Back" />
+        <SustainabilityNews />
+        </>
+      } />
+      <Route path="/otp" element={
+      <>
+        <RegisterLoginNavBar Button="Back" />
+        <OtpVerify />
+      </>
+      } />
+      <Route path="/security-questions" element={
+      <>
+      <RegisterLoginNavBar Button="Back" />
+      <SecurityQuestions />
+      </>
+      } />
       <Route path="/login" element={
         <>
         <RegisterLoginNavBar Button="Back" />
@@ -212,6 +229,8 @@ function MainContent() {
       </Route>
       <Route path="/chatbot" element={<ChatPage />} />
     </Routes>
+    <ChatbotButton />
+    </>
   );
 }
 

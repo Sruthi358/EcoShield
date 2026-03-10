@@ -110,34 +110,81 @@ from rest_framework.response import Response
 from django.db import transaction
 from .models import UserSecurityProfile, SecurityQuestion
 
+# @api_view(["POST"])
+# @permission_classes([IsAuthenticated])
+# @transaction.atomic
+# def setup_security_questions(request):
+#     q1 = request.data.get("q1")
+#     a1 = request.data.get("a1")
+#     q2 = request.data.get("q2")
+#     a2 = request.data.get("a2")
+
+#     if not all([q1, a1, q2, a2]):
+#         return Response({"error": "Missing fields"}, status=400)
+
+#     user = request.user
+
+#     UserSecurityProfile.objects.get_or_create(user=user)
+
+#     SecurityQuestion.objects.filter(user=user).delete()
+
+#     SecurityQuestion.objects.create(
+#         user=user, question_key=q1, answer=a1
+#     )
+#     SecurityQuestion.objects.create(
+#         user=user, question_key=q2, answer=a2
+#     )
+
+#     return Response({"status": "SECURITY_UPDATED"})
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from django.db import transaction
+from django.contrib.auth import get_user_model
+from .models import UserSecurityProfile, SecurityQuestion
+
+User = get_user_model()
+
 @api_view(["POST"])
-@permission_classes([IsAuthenticated])
 @transaction.atomic
 def setup_security_questions(request):
+
+    user_id = request.data.get("user_id")
     q1 = request.data.get("q1")
     a1 = request.data.get("a1")
     q2 = request.data.get("q2")
     a2 = request.data.get("a2")
 
-    if not all([q1, a1, q2, a2]):
+    if not all([user_id, q1, a1, q2, a2]):
         return Response({"error": "Missing fields"}, status=400)
 
-    user = request.user
+    try:
+        user = User.objects.get(id=user_id)
 
-    UserSecurityProfile.objects.get_or_create(user=user)
+        # create profile if not exists
+        UserSecurityProfile.objects.get_or_create(user=user)
 
-    SecurityQuestion.objects.filter(user=user).delete()
+        # remove old questions
+        SecurityQuestion.objects.filter(user=user).delete()
 
-    SecurityQuestion.objects.create(
-        user=user, question_key=q1, answer=a1
-    )
-    SecurityQuestion.objects.create(
-        user=user, question_key=q2, answer=a2
-    )
+        # create two questions
+        SecurityQuestion.objects.create(
+            user=user,
+            question_key=q1,
+            answer=a1
+        )
 
-    return Response({"status": "SECURITY_UPDATED"})
+        SecurityQuestion.objects.create(
+            user=user,
+            question_key=q2,
+            answer=a2
+        )
 
-    
+        return Response({"status": "SECURITY_UPDATED"})
+
+    except User.DoesNotExist:
+        return Response({"error": "User not found"}, status=404) 
+
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import get_user_model

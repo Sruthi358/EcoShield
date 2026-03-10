@@ -12,15 +12,20 @@ export default function NavBarUser(props) {
     <>
       <header className="bg-[#131921] text-white px-6 py-4 sticky top-0 z-20 w-full">
         <nav className="flex items-center justify-between text-sm font-medium gap-4 flex-wrap">
-          <p className="font-bold text-xl">EcoShield.</p>
+          {/* <p className="font-bold text-xl">EcoShield.</p> */}
+
+
+<Link to="/" className="font-bold text-xl">
+  EcoShield.
+</Link>
           {/* Left Section: About, Contact, EcoScore */}
           <div className="flex items-center gap-4">
           <Link to="/" className="cursor-pointer hover:text-teal-500">
               Home
             </Link>
-            <Link to="/aboutUs" className="cursor-pointer hover:text-teal-500">
+            {/* <Link to="/aboutUs" className="cursor-pointer hover:text-teal-500">
               About
-            </Link>
+            </Link> */}
             <Link
               to="/contactUs"
               className="cursor-pointer hover:text-teal-500"

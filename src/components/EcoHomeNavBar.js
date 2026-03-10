@@ -56,15 +56,19 @@ export default function NavBarSimple({ onSearch }) {
     <header className="bg-[#131921] text-white px-6 py-2.5">
       <nav className="flex items-center justify-between gap-6 flex-wrap">
         {/* LOGO */}
-        <p className="font-bold text-xl tracking-wide cursor-pointer">
+        {/* <p className="font-bold text-xl tracking-wide cursor-pointer">
           EcoShield.
-        </p>
+        </p> */}
+        
+        <Link to="/" className="font-bold text-xl">
+  EcoShield.
+</Link>
 
         {/* LEFT LINKS */}
         <div className="flex items-center gap-6 text-sm font-medium">
-          <Link to="/aboutUs" className="hover:text-teal-400">
+          {/* <Link to="/aboutUs" className="hover:text-teal-400">
             About
-          </Link>
+          </Link> */}
           <Link to="/contactUs" className="hover:text-teal-400">
             Contact Us
           </Link>
